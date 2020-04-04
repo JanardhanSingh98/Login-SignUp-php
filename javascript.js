@@ -13,10 +13,4 @@ function validatePassword(){
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
 
-function msg () {
-    var myvar="<?php echo $_SESSION['message'];?>";
-    alert(myvar);
-    document.getElementById("myForm").reset();
-}
-		
 		

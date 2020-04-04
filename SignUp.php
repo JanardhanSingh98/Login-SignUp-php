@@ -34,7 +34,7 @@
 			<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
 		</div>
 		<div class="form-group">
-            <button type="submit" onclick="msg()" name="submit" class="btn btn-primary btn-lg">Sign Up</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-lg">Sign Up</button>
         </div>
 		<p>Already have an account? <a href="login.php">Login here</a>.</p>
     </form>
@@ -51,7 +51,6 @@
 			} else {
 				$_SESSION['message'] = "Error: " . $sql . "<br>" . mysqli_error($conn);
 			}
-			//header('location: index.php');
 		}
 	 ?>
 </div>
