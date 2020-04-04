@@ -18,7 +18,7 @@
 		<div class="form-group">
 			<div class="input-group">
 				<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-				<input type="password" class="form-control" name="password" placeholder="Password" id="password" required="required">
+				<input type="password" minlength="6" class="form-control" name="password" placeholder="Password" id="password" required="required">
 			</div>
         </div>
 		<div class="form-group">
@@ -36,7 +36,7 @@
 		<div class="form-group">
             <button type="submit" name="submit" class="btn btn-primary btn-lg">Sign Up</button>
         </div>
-		<p>Already have an account? <a href="login.php">Login here</a>.</p>
+		<p>Already have an account? <a href="Login.php">Login here</a>.</p>
     </form>
 
 	<?php	
@@ -45,9 +45,12 @@
 			$username = $_POST['username'];
 			$email = $_POST['email'];
 			$pass = $_POST['password'];
+
 			$sql = "insert into int301(username, email, password) values('$username', '$email', '$pass')";
 			if (mysqli_query($conn, $sql)) {
-				$_SESSION['message'] = 'New record created successfully.';
+				echo '<script language="javascript">';
+				echo 'alert("Successfully Registered"); location.href="index.php"';
+				echo '</script>';
 			} else {
 				$_SESSION['message'] = "Error: " . $sql . "<br>" . mysqli_error($conn);
 			}
